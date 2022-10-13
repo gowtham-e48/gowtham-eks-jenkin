@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gowtham-eks-app
+  name: gowtham-eks-app
+  namespace: gowtham-space
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gowtham-eks-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gowtham-eks-app
+    spec:
+      containers:
+      - image: gratnaka/gowtham-jenkin-image:v0011
+        name: gowtham-jenkin-image
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
